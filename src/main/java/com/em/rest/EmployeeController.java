@@ -16,7 +16,7 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 	
 	@GetMapping("/employee/id/{eid}")
-	public @ResponseBody Optional<Employee> findDataUsingId(@PathVariable String eid) {
+	public @ResponseBody Optional<Company> findDataUsingId(@PathVariable String eid) {
 		return employeeService.getEmployeeDataUsingEid(eid);
 	}
 }

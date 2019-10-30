@@ -10,11 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class EmployeeService {
 
 	@Autowired
-	private EmployeeRepository employeeRepository;
+	private CompanyRepository cmpRepository;
 	
 	@Transactional
-	public Optional<Employee> getEmployeeDataUsingEid(String eid) {
-		Optional<Employee> employee = employeeRepository.findByEid(eid);
-		return employeeRepository.findByAid(employee.get().getAid());
+	public Optional<Company> getEmployeeDataUsingEid(String eid) {
+		Optional<Company> company = cmpRepository.findByEid(eid);
+		return cmpRepository.findByAid(company.get().getEmployees().get(0).getAid());
 	}
 }
